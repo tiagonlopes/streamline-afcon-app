@@ -31,7 +31,7 @@ matches = matches[mask_game]
 match_list = list(matches['match'])
 match_choice = st.sidebar.selectbox('Match',match_list)
 
-plot_options = ['Passing Network','Passes', 'Pressure Heatmap', 'Shots','Crosses','Deffensive Actions','Assists','Player Performance','Mistakes']
+plot_options = ['Passing Network','Passes', 'Pressure Heatmap', 'Shots','Crosses','Deffensive Actions','Assists','Player Performance','Mistakes','Transition']
 
 selected_plot = st.sidebar.selectbox('Select Plot', plot_options)
 
@@ -84,7 +84,11 @@ if match_choice:
 
     elif selected_plot == 'Mistakes':
         st.subheader('Mistakes')
-        mistake(df_team_selected)       
+        mistake(df_team_selected)
+
+    elif selected_plot == 'Transition':
+        st.subheader('Transition')
+        transition(df_team_selected)         
 
 
 
